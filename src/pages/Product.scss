@@ -1,0 +1,149 @@
+.product-image {
+    display: block;
+    width: 100%; // התאמה למיכל
+    max-width: 200px; // גודל מקסימלי לתמונה
+    height: auto; // שמירה על יחס גובה-רוחב
+    border-radius: 10px; // קצוות מעוגלים
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.05); // אפקט הגדלה קטן בעת מעבר עכבר
+    }
+  }
+
+
+//product list
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* מאפשר למוצרים לשבור שורה כאשר אין מקום */
+    justify-content: space-around;
+    /* שים רווחים שווים בין הכרטיסים */
+    gap: 16px;
+    /* מרווח בין הכרטיסים */
+    margin: 20px;
+    list-style-type: none;
+    /* מסיר את הנקודות ליד כל פריט ברשימה */
+}
+
+
+//product card
+.product-card {
+    text-decoration: none; // מסיר את הקו תחתון
+    position: relative; /* חשוב! כדי שהכפתור יוצב יחסית לכל מוצר */
+    list-style: none;
+    padding: 10px;
+
+    .card-txt {
+        text-decoration: none;
+
+    }
+
+    .product-name {
+        font-weight: bold;
+        text-decoration: none; // מסיר את הקו תחתון
+    }
+}
+
+
+// add product
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 15%;
+
+    .MuiTextField-root {
+        width: 100%;
+    }
+
+    .err-msg {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .MuiButton-root {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .category-checkbox {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+//cart
+.cart-container {
+    max-width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    background: #f9f9f9;
+    // border-radius: 8px;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        img {
+            width: 12%;
+            height: 32%;
+            // object-fit: cover;
+            // border-radius: 5px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 5px; 
+
+            p{
+                margin: 0;
+            }
+          }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            background: #bfbfc0;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            // transition: background 0.2s ease-in-out;
+            
+            &:hover {
+                background: #0056b3;
+            }
+
+            &:nth-child(2) {
+                background: #dc3545;
+
+                &:hover {
+                    background: #a71d2a;
+                }
+            }
+        }
+        .total-product{
+            margin-left: 22%;
+        }
+    }
+}
